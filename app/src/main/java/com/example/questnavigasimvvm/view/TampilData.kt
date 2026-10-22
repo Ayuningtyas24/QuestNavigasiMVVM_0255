@@ -29,10 +29,28 @@ import com.example.questnavigasimvvm.R
 @Composable
 fun TampilData(
     onBackBtnClick:()-> Unit
-){
+) {
     val items = listOf(
-        Pair(stringResource(id = R.string.nama_lengkap),"Contoh Nama"),
-        Pair(stringResource(id = R.string.jenis_kelamin),"Lainnya"),
-        Pair(stringResource(id = R.string.alamat),"yogyakarta")
+        Pair(stringResource(id = R.string.nama_lengkap), "Contoh Nama"),
+        Pair(stringResource(id = R.string.jenis_kelamin), "Lainnya"),
+        Pair(stringResource(id = R.string.alamat), "yogyakarta")
     )
+    Scaffold(
+        modifier = Modifier,
+        topBar = {
+            TopAppBar(
+                title = {
+                    Text(
+                        text = stringResource(id = R.string.tampil),
+                        color = Color.White
+                    )
+                },
+                colors = TopAppBarDefaults.mediumTopAppBarColors(
+                    containerColor = colorResource(id = R.color.teal_700)
+                )
+            )
+        }
+    ) { isiRuang ->
+
+    }
 }
