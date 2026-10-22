@@ -32,15 +32,33 @@ import com.example.questnavigasimvvm.R
 fun FormIsian(
     jenisK:List<String> = listOf("Laki-laki","Perempuan"),
     onSubmitBtnClick:() -> Unit,
-) {
-    Scaffold(
-        modifier = Modifier,
+){
+    Scaffold(modifier = Modifier,
         {
             TopAppBar(
-                title = { Text(stringResource(id = R.string.home), color = Color.White) },
+                title = {Text(stringResource(id = R.string.home), color = Color.White)},
                 colors = TopAppBarDefaults.mediumTopAppBarColors(
-                    colorResource(id = R.color.teal_700)
-                )
-            )
-        }
+                    colorResource(id = R.color.teal_700))
+            )}
     )
+    {
+        isiRuang ->
+        Column(modifier = Modifier.padding(isiRuang),
+            verticalArrangement = Arrangement.Top,
+            horizontalAlignment = Alignment.CenterHorizontally) {
+            OutlinedTextField(
+                value = "",
+                singleLine = true,
+                modifier = Modifier
+                    .padding(top = 20.dp)
+                    .width(250.dp),
+                label = {Text(text = "Nama Lengkap")},
+                onValueChange = {},
+            )
+            HorizontalDivider(modifier = Modifier
+                .padding(20.dp)
+                .width(250.dp), thickness = Thickness,color = Color.Red)
+
+        }
+    }
+}
